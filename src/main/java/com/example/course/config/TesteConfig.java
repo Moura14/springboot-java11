@@ -12,8 +12,10 @@ import com.example.course.entites.Category;
 import com.example.course.entites.Order;
 import com.example.course.entites.User;
 import com.example.course.entites.enums.OrderStatus;
+import com.example.course.entites.enums.Product;
 import com.example.course.repositories.CategoryRepositry;
 import com.example.course.repositories.OrderRepository;
+import com.example.course.repositories.ProductRepositry;
 import com.example.course.repositories.UserRepositry;
 
 @Configuration
@@ -29,6 +31,10 @@ public class TesteConfig implements CommandLineRunner {
 	
 	@Autowired
 	private CategoryRepositry categoryRepositry;
+	
+	
+	@Autowired
+	private ProductRepositry productRepositry;
 		
 	@Override
 	public void run(String... args) throws Exception {
@@ -39,7 +45,15 @@ public class TesteConfig implements CommandLineRunner {
 		Category cat3 = new Category(null, "Computers");
 		
 		
+		
+		Product p1 = new Product(null, "The Lord of the Rings", "Lorem ipsum dolor sit amet, consectetur.", 90.5, ""); 
+		Product p2 = new Product(null, "Smart TV", "Nulla eu imperdiet purus. Maecenas ante.", 2190.0, ""); 
+		Product p3 = new Product(null, "Macbook Pro", "Nam eleifend maximus tortor, at mollis.", 1250.0, ""); 
+		Product p4 = new Product(null, "PC Gamer", "Donec aliquet odio ac rhoncus cursus.", 1200.0, ""); 
+		Product p5 = new Product(null, "Rails for Dummies", "Cras fringilla convallis sem vel faucibus.", 100.99, ""); 
+		
 		categoryRepositry.saveAll(Arrays.asList(cat1, cat2, cat3));
+		productRepositry.saveAll(Arrays.asList(p1, p2, p3, p4, p5));
 		
 		
 		User u1 = new User(null, "Maria Brown", "maria@gmail.com", "6140028922", "12345");
