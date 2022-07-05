@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.course.entites.enums.Product;
+import com.example.course.entites.Product;
 import com.example.course.services.ProductService;
 
 @RestController
